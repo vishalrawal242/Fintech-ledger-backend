@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: ledger-postgres
+    environment:
+      POSTGRES_DB: ledgerdb
+      POSTGRES_USER: ledger
+      POSTGRES_PASSWORD: ledger123
+    ports:
+      - "5433:5432"
+    volumes:
+      - ledger-pgdata:/var/lib/postgresql/data
+
+  kafka:
+    image: apache/kafka:4.0.0
+    container_name: ledger-kafka
+    ports:
+      - "9092:9092"
+
+volumes:
+  ledger-pgdata:
