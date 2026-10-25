@@ -18,6 +18,22 @@ A double-entry ledger backend built with Java and Spring Boot. It supports idemp
 - Global exception handling with clear error responses
 - Unit and integration tests
 
+## How to Run
+
+You need Java and Docker Desktop installed. Make sure Docker Desktop is running, then:
+
+Start PostgreSQL and Kafka:
+
+```
+docker compose up -d
+```
+
+Start the application:
+
+```
+./mvnw spring-boot:run
+```
+
 ## Author
 
 Vishal Rawal
